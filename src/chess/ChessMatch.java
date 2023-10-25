@@ -10,7 +10,7 @@ public class ChessMatch {
 
 	private Board board;
 
-	public ChessMatch() {
+	public ChessMatch() throws Exception {
 		board = new Board(8, 8);
 		initialSetup();
 	}
@@ -42,10 +42,9 @@ public class ChessMatch {
 	}
 
 	private void validateSourcePosition(Position position) {
-		if (!board.thereIsAPiece(position)) {
-			
-		throw new ChessException("There is no piece on source position");
-	}
+		if (!board.thereIsAPiece(position)) {	
+			 throw new ChessException("There is no piece on source position");
+		}
 
 	} 
 
